@@ -1,0 +1,198 @@
+solid CurvedMirrorHolder
+facet normal 0.0 0.0 -1.0
+  outer loop
+    vertex 25.0 80.0 0.0
+    vertex -40.0 0.0 0.0
+    vertex -40.0 80.0 0.0
+  endloop
+endfacet
+facet normal 0.0 0.0 -1.0
+  outer loop
+    vertex -40.0 0.0 0.0
+    vertex 25.0 80.0 0.0
+    vertex 25.0 0.0 0.0
+  endloop
+endfacet
+facet normal 1.0 0.0 0.0
+  outer loop
+    vertex 25.0 80.0 0.0
+    vertex 25.0 0.0 10.0
+    vertex 25.0 0.0 0.0
+  endloop
+endfacet
+facet normal 1.0 0.0 0.0
+  outer loop
+    vertex 25.0 0.0 10.0
+    vertex 25.0 80.0 0.0
+    vertex 25.0 80.0 10.0
+  endloop
+endfacet
+facet normal 1.8435082187331253e-17 -1.0 -2.49805931809666e-16
+  outer loop
+    vertex -40.0 0.0 0.0
+    vertex -35.0 0.0 3.9999999999999996
+    vertex -39.99999999999963 -2.4234086959395995e-14 103.99999999999999
+  endloop
+endfacet
+facet normal 1.8435082187331253e-17 -1.0 -2.49805931809666e-16
+  outer loop
+    vertex -35.0 0.0 3.9999999999999996
+    vertex -40.0 0.0 0.0
+    vertex 20.0 0.0 3.9999999999999996
+  endloop
+endfacet
+facet normal 1.8435082187331253e-17 -1.0 -2.49805931809666e-16
+  outer loop
+    vertex -39.99999999999963 -2.4234086959395995e-14 103.99999999999999
+    vertex -35.0 0.0 3.9999999999999996
+    vertex -34.99999999999963 -2.4234086959395995e-14 90.99999999999999
+  endloop
+endfacet
+facet normal 1.8435082187331253e-17 -1.0 -2.49805931809666e-16
+  outer loop
+    vertex 25.0 0.0 0.0
+    vertex 20.0 0.0 3.9999999999999996
+    vertex -40.0 0.0 0.0
+  endloop
+endfacet
+facet normal 1.8435082187331253e-17 -1.0 -2.49805931809666e-16
+  outer loop
+    vertex 20.0 0.0 3.9999999999999996
+    vertex 25.0 0.0 0.0
+    vertex 25.0 0.0 10.0
+  endloop
+endfacet
+facet normal 1.8435082187331253e-17 -1.0 -2.49805931809666e-16
+  outer loop
+    vertex 20.0 0.0 3.9999999999999996
+    vertex 25.0 0.0 10.0
+    vertex 20.0 0.0 10.0
+  endloop
+endfacet
+facet normal -1.0 0.0 0.0
+  outer loop
+    vertex -39.99999999999963 79.99999999999997 104.00000000000003
+    vertex -40.0 0.0 0.0
+    vertex -39.99999999999963 -2.4234086959395995e-14 103.99999999999999
+  endloop
+endfacet
+facet normal -1.0 0.0 0.0
+  outer loop
+    vertex -40.0 0.0 0.0
+    vertex -39.99999999999963 79.99999999999997 104.00000000000003
+    vertex -40.0 80.0 0.0
+  endloop
+endfacet
+facet normal 0.0 0.0 1.0
+  outer loop
+    vertex 25.0 0.0 10.0
+    vertex 20.0 80.0 10.0
+    vertex 20.0 0.0 10.0
+  endloop
+endfacet
+facet normal 0.0 0.0 1.0
+  outer loop
+    vertex 20.0 80.0 10.0
+    vertex 25.0 0.0 10.0
+    vertex 25.0 80.0 10.0
+  endloop
+endfacet
+facet normal -1.0 -0.0 -0.0
+  outer loop
+    vertex 20.0 80.0 10.0
+    vertex 20.0 0.0 3.9999999999999996
+    vertex 20.0 0.0 10.0
+  endloop
+endfacet
+facet normal -1.0 -0.0 -0.0
+  outer loop
+    vertex 20.0 0.0 3.9999999999999996
+    vertex 20.0 80.0 10.0
+    vertex 20.0 80.0 3.9999999999999996
+  endloop
+endfacet
+facet normal -0.0 -0.0 1.0
+  outer loop
+    vertex 20.0 0.0 3.9999999999999996
+    vertex -35.0 80.0 3.9999999999999996
+    vertex -35.0 0.0 3.9999999999999996
+  endloop
+endfacet
+facet normal -0.0 -0.0 1.0
+  outer loop
+    vertex -35.0 80.0 3.9999999999999996
+    vertex 20.0 0.0 3.9999999999999996
+    vertex 20.0 80.0 3.9999999999999996
+  endloop
+endfacet
+facet normal -2.1793333416581827e-17 1.0 2.84952092602753e-16
+  outer loop
+    vertex -40.0 80.0 0.0
+    vertex -35.0 80.0 3.9999999999999996
+    vertex 25.0 80.0 0.0
+  endloop
+endfacet
+facet normal -2.1793333416581827e-17 1.0 2.84952092602753e-16
+  outer loop
+    vertex -35.0 80.0 3.9999999999999996
+    vertex -40.0 80.0 0.0
+    vertex -39.99999999999963 79.99999999999997 104.00000000000003
+  endloop
+endfacet
+facet normal -2.1793333416581827e-17 1.0 2.84952092602753e-16
+  outer loop
+    vertex -35.0 80.0 3.9999999999999996
+    vertex -39.99999999999963 79.99999999999997 104.00000000000003
+    vertex -34.99999999999963 79.99999999999997 90.99999999999999
+  endloop
+endfacet
+facet normal -2.1793333416581827e-17 1.0 2.84952092602753e-16
+  outer loop
+    vertex 25.0 80.0 0.0
+    vertex 20.0 80.0 3.9999999999999996
+    vertex 25.0 80.0 10.0
+  endloop
+endfacet
+facet normal -2.1793333416581827e-17 1.0 2.84952092602753e-16
+  outer loop
+    vertex 20.0 80.0 3.9999999999999996
+    vertex 25.0 80.0 0.0
+    vertex -35.0 80.0 3.9999999999999996
+  endloop
+endfacet
+facet normal -2.1793333416581827e-17 1.0 2.84952092602753e-16
+  outer loop
+    vertex 25.0 80.0 10.0
+    vertex 20.0 80.0 3.9999999999999996
+    vertex 20.0 80.0 10.0
+  endloop
+endfacet
+facet normal 0.9333456062030598 -9.923475040534328e-17 0.3589790793088683
+  outer loop
+    vertex -34.99999999999963 79.99999999999997 90.99999999999999
+    vertex -39.99999999999963 -2.4234086959395995e-14 103.99999999999999
+    vertex -34.99999999999963 -2.4234086959395995e-14 90.99999999999999
+  endloop
+endfacet
+facet normal 0.9333456062030598 -9.923475040534328e-17 0.3589790793088683
+  outer loop
+    vertex -39.99999999999963 -2.4234086959395995e-14 103.99999999999999
+    vertex -34.99999999999963 79.99999999999997 90.99999999999999
+    vertex -39.99999999999963 79.99999999999997 104.00000000000003
+  endloop
+endfacet
+facet normal 1.0 -3.150035290825597e-31 -4.278569835589914e-15
+  outer loop
+    vertex -35.0 0.0 3.9999999999999996
+    vertex -34.99999999999963 79.99999999999997 90.99999999999999
+    vertex -34.99999999999963 -2.4234086959395995e-14 90.99999999999999
+  endloop
+endfacet
+facet normal 1.0 -3.150035290825597e-31 -4.278569835589914e-15
+  outer loop
+    vertex -34.99999999999963 79.99999999999997 90.99999999999999
+    vertex -35.0 0.0 3.9999999999999996
+    vertex -35.0 80.0 3.9999999999999996
+  endloop
+endfacet
+endsolid CurvedMirrorHolder
