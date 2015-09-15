@@ -1,0 +1,26 @@
+Date: 28/7/2015			Time: 15:56:41
+
+
+Patient Name :TestSubject
+Patient Age :12 Months
+Patient Sex :Male
+Patient EMR No :123456
+Patient Description :Test Subject
+
+
+
+##############################
+
+PATIENT RESULTS
+
+##############################
+TEST			START		Stop		AngleStopped		Brightness	Delay
+Quadrant top right inner	15:56:41	15:56:42						255
+Quadrant top right	15:56:42	15:57:27				-20		255		1000
+Meridian 210		15:57:27		15:57:31				-20		255		1000
+Meridian 165		15:57:31		15:57:32				-20		255		1000
+Meridian 150		15:57:32		15:57:36				-20		255		1000
+Meridian 30		15:57:36		15:57:39				-20		255		1000
+Meridian 15		15:57:39		15:57:43				-20		255		1000
+Meridian 90		15:57:43		15:57:47				50		255		1000
+Meridian 120		15:57:48		15:57:50				70		255		1000
