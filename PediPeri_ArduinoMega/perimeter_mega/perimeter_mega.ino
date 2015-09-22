@@ -14,7 +14,7 @@ long previousMillis = 0;        // will store last time LED was updated
 // will quickly become a bigger number than can be stored in an int.
 unsigned long interval = 1000;           // interval at which to blink (milliseconds)
 
-int fixationLED = 11, IRLED = 12,ground=10;
+int fixationLED = 10, IRLED = 12,ground=10;
 void setup() {
   Serial.begin(9600);
     
@@ -32,8 +32,8 @@ void setup() {
   // we will set the PWM pin which control the camera-side LEDs 
   
   pinMode(fixationLED, OUTPUT);    // 4 gaze fixation target visible LEDs
-  pinMode(IRLED, OUTPUT);    // 4 IR LEDs for the camera
-  pinMode(ground,OUTPUT);
+  //pinMode(IRLED, OUTPUT);    // 4 IR LEDs for the camera
+  //pinMode(ground,OUTPUT);
   // next we give the PWM command to drive them. THey have 100E current limiting resistors
   //analogWrite(fixationLED, 80);
   //digitalWrite(IRLED, HIGH);
