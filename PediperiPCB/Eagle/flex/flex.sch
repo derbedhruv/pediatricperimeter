@@ -1818,22 +1818,70 @@ Source: http://www.osram.convergy.de/</description>
 <plain>
 </plain>
 <instances>
-<instance part="LED1" gate="G$1" x="-2.54" y="76.2"/>
-<instance part="LED2" gate="G$1" x="5.08" y="76.2"/>
-<instance part="LED3" gate="G$1" x="12.7" y="76.2"/>
-<instance part="LED4" gate="G$1" x="17.78" y="73.66"/>
-<instance part="LED5" gate="G$1" x="27.94" y="73.66"/>
-<instance part="LED6" gate="G$1" x="33.02" y="73.66"/>
-<instance part="LED7" gate="G$1" x="38.1" y="73.66"/>
-<instance part="LED8" gate="G$1" x="48.26" y="73.66"/>
-<instance part="LED9" gate="G$1" x="55.88" y="73.66"/>
-<instance part="LED10" gate="G$1" x="66.04" y="73.66"/>
-<instance part="LED11" gate="G$1" x="76.2" y="73.66"/>
-<instance part="LED12" gate="G$1" x="83.82" y="73.66"/>
-<instance part="LED13" gate="G$1" x="93.98" y="71.12"/>
-<instance part="LED14" gate="G$1" x="106.68" y="73.66"/>
-<instance part="LED15" gate="G$1" x="116.84" y="73.66"/>
-<instance part="LED16" gate="G$1" x="124.46" y="73.66"/>
+<instance part="LED1" gate="G$1" x="-2.54" y="76.2" smashed="yes">
+<attribute name="NAME" x="0.762" y="80.518" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="3.175" y="71.628" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="LED2" gate="G$1" x="5.08" y="76.2" smashed="yes">
+<attribute name="NAME" x="8.636" y="79.248" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="10.795" y="71.628" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="LED3" gate="G$1" x="12.7" y="76.2" smashed="yes">
+<attribute name="NAME" x="15.748" y="79.248" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="18.415" y="71.628" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="LED4" gate="G$1" x="17.78" y="73.66" smashed="yes">
+<attribute name="NAME" x="23.114" y="78.74" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="23.495" y="69.088" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="LED5" gate="G$1" x="27.94" y="73.66" smashed="yes">
+<attribute name="NAME" x="30.48" y="78.486" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="33.655" y="69.088" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="LED6" gate="G$1" x="33.02" y="73.66" smashed="yes">
+<attribute name="NAME" x="37.338" y="78.486" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="38.735" y="69.088" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="LED7" gate="G$1" x="38.1" y="73.66" smashed="yes">
+<attribute name="NAME" x="41.148" y="68.072" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="43.815" y="69.088" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="LED8" gate="G$1" x="48.26" y="73.66" smashed="yes">
+<attribute name="NAME" x="50.546" y="68.072" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="53.975" y="69.088" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="LED9" gate="G$1" x="55.88" y="73.66" smashed="yes">
+<attribute name="NAME" x="58.928" y="68.072" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="61.595" y="69.088" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="LED10" gate="G$1" x="66.04" y="73.66" smashed="yes">
+<attribute name="NAME" x="68.326" y="68.326" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="71.755" y="69.088" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="LED11" gate="G$1" x="76.2" y="73.66" smashed="yes">
+<attribute name="NAME" x="79.248" y="68.326" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="81.915" y="69.088" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="LED12" gate="G$1" x="83.82" y="73.66" smashed="yes">
+<attribute name="NAME" x="88.138" y="68.326" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="89.535" y="69.088" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="LED13" gate="G$1" x="93.98" y="71.12" smashed="yes">
+<attribute name="NAME" x="97.79" y="65.786" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="99.695" y="66.548" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="LED14" gate="G$1" x="106.68" y="73.66" smashed="yes">
+<attribute name="NAME" x="109.22" y="68.072" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="112.395" y="69.088" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="LED15" gate="G$1" x="116.84" y="73.66" smashed="yes">
+<attribute name="NAME" x="119.888" y="68.072" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="122.555" y="69.088" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="LED16" gate="G$1" x="124.46" y="73.66" smashed="yes">
+<attribute name="NAME" x="128.016" y="78.74" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="130.175" y="69.088" size="1.778" layer="96" rot="R90"/>
+</instance>
 <instance part="JUMPER" gate="A" x="50.8" y="99.06" smashed="yes" rot="R90">
 <attribute name="NAME" x="51.562" y="102.743" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="78.74" y="92.71" size="1.778" layer="96" rot="R90"/>

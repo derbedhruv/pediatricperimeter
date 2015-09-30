@@ -1811,7 +1811,7 @@ Source: http://www.osram.convergy.de/</description>
 <part name="LED14" library="adafruit" deviceset="LED" device="5MM"/>
 <part name="LED15" library="adafruit" deviceset="LED" device="5MM"/>
 <part name="LED16" library="adafruit" deviceset="LED" device="5MM"/>
-<part name="PCB" library="adafruit" deviceset="PINHD-1X18" device=""/>
+<part name="JUMPER" library="adafruit" deviceset="PINHD-1X18" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1834,7 +1834,7 @@ Source: http://www.osram.convergy.de/</description>
 <instance part="LED14" gate="G$1" x="106.68" y="73.66"/>
 <instance part="LED15" gate="G$1" x="116.84" y="73.66"/>
 <instance part="LED16" gate="G$1" x="124.46" y="73.66"/>
-<instance part="PCB" gate="A" x="50.8" y="99.06" smashed="yes" rot="R90">
+<instance part="JUMPER" gate="A" x="50.8" y="99.06" smashed="yes" rot="R90">
 <attribute name="NAME" x="51.562" y="102.743" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="78.74" y="92.71" size="1.778" layer="96" rot="R90"/>
 </instance>
@@ -1851,7 +1851,7 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="86.36" y1="88.9" x2="78.74" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="78.74" y1="96.52" x2="75.184" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="75.184" y1="96.52" x2="73.914" y2="95.25" width="0.1524" layer="91"/>
-<pinref part="PCB" gate="A" pin="17"/>
+<pinref part="JUMPER" gate="A" pin="17"/>
 <wire x1="73.914" y1="95.25" x2="72.39" y2="95.25" width="0.1524" layer="91"/>
 <wire x1="72.39" y1="95.25" x2="71.12" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="LED16" gate="G$1" pin="C"/>
@@ -1896,7 +1896,7 @@ Source: http://www.osram.convergy.de/</description>
 </net>
 <net name="N$3" class="0">
 <segment>
-<pinref part="PCB" gate="A" pin="2"/>
+<pinref part="JUMPER" gate="A" pin="2"/>
 <wire x1="33.02" y1="96.52" x2="22.86" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="LED2" gate="G$1" pin="A"/>
 <wire x1="22.86" y1="86.36" x2="12.7" y2="86.36" width="0.1524" layer="91"/>
@@ -1908,14 +1908,14 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="LED3" gate="G$1" pin="A"/>
 <wire x1="12.7" y1="78.74" x2="12.7" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="12.7" y1="81.28" x2="15.24" y2="83.82" width="0.1524" layer="91"/>
-<pinref part="PCB" gate="A" pin="3"/>
+<pinref part="JUMPER" gate="A" pin="3"/>
 <wire x1="15.24" y1="83.82" x2="22.86" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="22.86" y1="83.82" x2="35.56" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$5" class="0">
 <segment>
-<pinref part="PCB" gate="A" pin="4"/>
+<pinref part="JUMPER" gate="A" pin="4"/>
 <pinref part="LED4" gate="G$1" pin="A"/>
 <wire x1="38.1" y1="96.52" x2="17.78" y2="76.2" width="0.1524" layer="91"/>
 </segment>
@@ -1923,14 +1923,14 @@ Source: http://www.osram.convergy.de/</description>
 <net name="N$6" class="0">
 <segment>
 <pinref part="LED5" gate="G$1" pin="A"/>
-<pinref part="PCB" gate="A" pin="5"/>
+<pinref part="JUMPER" gate="A" pin="5"/>
 <wire x1="27.94" y1="76.2" x2="27.94" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="83.82" x2="40.64" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$7" class="0">
 <segment>
-<pinref part="PCB" gate="A" pin="6"/>
+<pinref part="JUMPER" gate="A" pin="6"/>
 <pinref part="LED6" gate="G$1" pin="A"/>
 <wire x1="43.18" y1="96.52" x2="43.18" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="86.36" x2="33.02" y2="76.2" width="0.1524" layer="91"/>
@@ -1941,13 +1941,13 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="LED7" gate="G$1" pin="A"/>
 <wire x1="38.1" y1="76.2" x2="38.1" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="78.74" x2="45.72" y2="86.36" width="0.1524" layer="91"/>
-<pinref part="PCB" gate="A" pin="7"/>
+<pinref part="JUMPER" gate="A" pin="7"/>
 <wire x1="45.72" y1="86.36" x2="45.72" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$9" class="0">
 <segment>
-<pinref part="PCB" gate="A" pin="8"/>
+<pinref part="JUMPER" gate="A" pin="8"/>
 <wire x1="48.26" y1="96.52" x2="48.26" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="86.36" x2="40.64" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="78.74" x2="40.64" y2="76.2" width="0.1524" layer="91"/>
@@ -1958,14 +1958,14 @@ Source: http://www.osram.convergy.de/</description>
 <net name="N$10" class="0">
 <segment>
 <pinref part="LED9" gate="G$1" pin="A"/>
-<pinref part="PCB" gate="A" pin="9"/>
+<pinref part="JUMPER" gate="A" pin="9"/>
 <wire x1="55.88" y1="76.2" x2="55.88" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="55.88" y1="91.44" x2="50.8" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$11" class="0">
 <segment>
-<pinref part="PCB" gate="A" pin="10"/>
+<pinref part="JUMPER" gate="A" pin="10"/>
 <wire x1="53.34" y1="96.52" x2="58.42" y2="91.44" width="0.1524" layer="91"/>
 <pinref part="LED10" gate="G$1" pin="A"/>
 <wire x1="58.42" y1="91.44" x2="58.42" y2="83.82" width="0.1524" layer="91"/>
@@ -1974,14 +1974,14 @@ Source: http://www.osram.convergy.de/</description>
 </net>
 <net name="N$12" class="0">
 <segment>
-<pinref part="PCB" gate="A" pin="11"/>
+<pinref part="JUMPER" gate="A" pin="11"/>
 <pinref part="LED11" gate="G$1" pin="A"/>
 <wire x1="55.88" y1="96.52" x2="76.2" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$13" class="0">
 <segment>
-<pinref part="PCB" gate="A" pin="12"/>
+<pinref part="JUMPER" gate="A" pin="12"/>
 <wire x1="58.42" y1="96.52" x2="76.2" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="LED12" gate="G$1" pin="A"/>
 <wire x1="76.2" y1="78.74" x2="81.28" y2="78.74" width="0.1524" layer="91"/>
@@ -1993,14 +1993,14 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="LED13" gate="G$1" pin="A"/>
 <wire x1="93.98" y1="73.66" x2="88.9" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="88.9" y1="73.66" x2="76.2" y2="86.36" width="0.1524" layer="91"/>
-<pinref part="PCB" gate="A" pin="13"/>
+<pinref part="JUMPER" gate="A" pin="13"/>
 <wire x1="76.2" y1="86.36" x2="71.12" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="86.36" x2="60.96" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$15" class="0">
 <segment>
-<pinref part="PCB" gate="A" pin="14"/>
+<pinref part="JUMPER" gate="A" pin="14"/>
 <wire x1="63.5" y1="96.52" x2="71.12" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="88.9" x2="76.2" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="88.9" x2="88.9" y2="76.2" width="0.1524" layer="91"/>
@@ -2015,14 +2015,14 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="111.76" y1="76.2" x2="106.68" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="81.28" x2="86.36" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="81.28" x2="76.2" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="PCB" gate="A" pin="15"/>
+<pinref part="JUMPER" gate="A" pin="15"/>
 <wire x1="76.2" y1="91.44" x2="71.12" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="91.44" x2="66.04" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$17" class="0">
 <segment>
-<pinref part="PCB" gate="A" pin="16"/>
+<pinref part="JUMPER" gate="A" pin="16"/>
 <wire x1="68.58" y1="96.52" x2="71.12" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="93.98" x2="76.2" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="93.98" x2="86.36" y2="83.82" width="0.1524" layer="91"/>
@@ -2038,7 +2038,7 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="LED1" gate="G$1" pin="A"/>
 <wire x1="-2.54" y1="78.74" x2="2.54" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="2.54" y1="78.74" x2="12.7" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="PCB" gate="A" pin="1"/>
+<pinref part="JUMPER" gate="A" pin="1"/>
 <wire x1="12.7" y1="88.9" x2="22.86" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="22.86" y1="88.9" x2="30.48" y2="96.52" width="0.1524" layer="91"/>
 </segment>
