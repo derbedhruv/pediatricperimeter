@@ -1,5 +1,5 @@
 /***************************************
-THIS IS THE LATEST VERSION AS OF 4-may-2015
+THIS IS THE LATEST VERSION AS OF 28-oct-2015
 Written By :Karthik Reddy, Dhruv Joshi
 Project Name :Pediatric Perimeter
 The Project is Intended to caliberate the field of vision and other few vision related issues in Babies under a year 
@@ -173,7 +173,12 @@ cp5.addTextfield("Time") //Text Field Description and the Specifications
     .setPosition(20, 20)
       .setSize(80, 40)
         .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
-          ;    
+          ; 
+       cp5.addBang("Random")  //The Bang starts the test by giving random lights
+    .setPosition(1075, 445)
+      .setSize(40, 40)
+        .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
+          ;      
   cp5.addBang("Stop")
     .setPosition(120, 540)
       .setSize(80, 40)
@@ -330,7 +335,26 @@ public void clear() {    //Bang Function for the Button Clear
   //
 }
 
-
+public void Random(){
+textValue = "Randomize the Gaze of the baby";
+  arduino.write('h');
+        arduino.write(',');
+        arduino.write('r');
+        arduino.write('\n');
+delay(1500);
+        arduino.write('h');
+        arduino.write(',');
+        arduino.write('l');
+        arduino.write('\n');
+delay(1500);
+        arduino.write('q');
+        arduino.write(',');
+        arduino.write('2');
+        arduino.write('\n');
+delay(1500);
+arduino.write('x');
+        arduino.write('\n');
+}
 public void Save() {//Bang Function for the Button Save
   // Clicking SAVE
  textName = cp5.get(Textfield.class, "Name").getText();// these text fields need not be refreshed each and every time hence they are updated only when we save the files hence they are moved from draw()
@@ -382,7 +406,7 @@ public void Stop(){
   textVideo = "Test has stopped. All lights OFF.";
   kk = 0;
   if(timeStampDone == false) {
-    output.print("\t" + hour() + ":" + minute() +":" + second()); 
+    output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
     output.print("\t\t" + textTimer + "\t");
     // write the presently completed meridian to the file...
     if (isMeridian==true) {  // checking if it's a meridian or not...
@@ -466,7 +490,7 @@ void mousePressed() {
         textValue = "kinetic perimetry, Meridian " + azimuth + " degrees";
         if (timeStampDone == true) {
           output.print("Meridian " + azimuth); 
-          output.print("\t\t"+hour() + ":" + minute() +":" + second()+"\t");
+         output.print("\t\t" + hour() + ":" + minute() +":" + second()+":" + millis()+"\t"); 
           output.flush(); // Writes the remaining data to the file
           timeStampDone = false;  
         }
@@ -510,7 +534,7 @@ void mousePressed() {
           output.print("Quadrant");
             output.print(" top right");
              timeStampDone = false;
-           output.print("\t" + hour() + ":" + minute() +":" + second());  
+           output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis());  
          output.flush(); // Writes the remaining data to the file
        }
         hemquad[2 - 1] = 200;  // set that particular quadrant to 'done' 
@@ -526,7 +550,7 @@ void mousePressed() {
           output.print("Quadrant");
             output.print(" top left");
                timeStampDone = false; 
-                output.print("\t" + hour() + ":" + minute() +":" + second());
+                output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
        output.flush(); // Writes the remaining data to the file  
         }
         hemquad[3 - 1] = 200;  // set that particular quadrant to 'done'
@@ -542,7 +566,7 @@ void mousePressed() {
           output.print("Quadrant");
             output.print(" bottom left");
              timeStampDone = false;
-           output.print("\t" + hour() + ":" + minute() +":" + second());  
+           output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis());   
        output.flush(); // Writes the remaining data to the file  
        }
         hemquad[4 - 1] = 200; } // set that particular quadrant to 'done'}
@@ -557,7 +581,7 @@ void mousePressed() {
           output.print("Quadrant");
             output.print(" bottom right");
    timeStampDone = false; 
-  output.print("\t" + hour() + ":" + minute() +":" + second()); 
+output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
 output.flush(); // Writes the remaining data to the file
 }
  }
@@ -574,7 +598,7 @@ output.flush(); // Writes the remaining data to the file
           output.print("Quadrant");
             output.print(" top right inner");
              timeStampDone = false;
-           output.print("\t" + hour() + ":" + minute() +":" + second()); 
+           output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis());  
       output.flush(); // Writes the remaining data to the file  
        }
         hemquad[2 - 1] = 200;  // set that particular quadrant to 'done' 
@@ -589,9 +613,8 @@ output.flush(); // Writes the remaining data to the file
          if (timeStampDone == true) {
           output.print("Quadrant");
             output.print(" top left inner");
-              output.print("\t" + hour() + ":" + minute() +":" + second());
-             timeStampDone = false; 
-            output.print("\t" + hour() + ":" + minute() +":" + second());
+                           timeStampDone = false; 
+            output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
        output.flush(); // Writes the remaining data to the file  
         }
         hemquad[3 - 1] = 200;  // set that particular quadrant to 'done'
@@ -607,7 +630,7 @@ output.flush(); // Writes the remaining data to the file
           output.print("Quadrant");
             output.print(" bottom left inner");
              timeStampDone = false;
-           output.print("\t" + hour() + ":" + minute() +":" + second());  
+           output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
        output.flush(); // Writes the remaining data to the file  
        }
         hemquad[4 - 1] = 200; } // set that particular quadrant to 'done'}
@@ -622,7 +645,7 @@ output.flush(); // Writes the remaining data to the file
           output.print("Quadrant");
             output.print(" bottom right inner");
    timeStampDone = false; 
-  output.print("\t" + hour() + ":" + minute() +":" + second()); 
+output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
 output.flush(); // Writes the remaining data to the file
 }
  hemquad[1 - 1] = 200;}
@@ -656,8 +679,7 @@ output.flush(); // Writes the remaining data to the file
         if (timeStampDone == true) {
           output.print("Hemisphere");
          output.print(" left inner");
- 
-          output.print("\t" + hour() + ":" + minute() +":" + second());
+           output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
           timeStampDone = false;  
           output.flush(); // Writes the remaining data to the file
         }
@@ -674,8 +696,7 @@ output.flush(); // Writes the remaining data to the file
         if (timeStampDone == true) {
           output.print("Hemisphere");
          output.print(" right inner");
- 
-          output.print("\t" + hour() + ":" + minute() +":" + second());
+           output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
           timeStampDone = false;  
      output.flush(); // Writes the remaining data to the file  
       }
@@ -694,7 +715,7 @@ output.flush(); // Writes the remaining data to the file
           output.print("Hemisphere");
          output.print(" left ");
  
-          output.print("\t" + hour() + ":" + minute() +":" + second());
+          output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
           timeStampDone = false;  
      output.flush(); // Writes the remaining data to the file  
       }
@@ -712,7 +733,7 @@ output.flush(); // Writes the remaining data to the file
           output.print("Hemisphere");
          output.print(" right ");
  
-          output.print("\t" + hour() + ":" + minute() +":" + second());
+         output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
           timeStampDone = false;  
      output.flush(); // Writes the remaining data to the file  
       }

@@ -14,7 +14,7 @@ long previousMillis = 0;        // will store last time LED was updated
 // will quickly become a bigger number than can be stored in an int.
 unsigned long interval = 1000;           // interval at which to blink (milliseconds)
 
-int fixationLED = 10, IRLED = 12,ground=10;
+int fixationLED = 10;
 void setup() {
   Serial.begin(9600);
     
