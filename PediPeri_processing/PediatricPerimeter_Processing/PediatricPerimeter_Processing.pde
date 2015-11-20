@@ -217,7 +217,7 @@ cp5.addTextfield("Time") //Text Field Description and the Specifications
     
     for (int i = 0; i < cameras.length; i++) {  //Listing the avalibale Cameras
       // println(cameras[i].length());
-      if (cameras[i].length() == 24 && cameras[i].substring(10,17).equals("LifeCam")) {
+      if (cameras[i].equals("HD USB Camera")) {
         print("...success!\n");
         cam = new GSCapture(this, 640, 480, cameras[i]);      // Camera object will capture in 640x480 resolution
         cam.start();      // shall start acquiring video feed from the camera
@@ -749,8 +749,6 @@ else {
       }
 }
    
-
-
 void customize(DropdownList ddl) {
   // This part changes the properties of the MALE/FEMALE dropdown
   ddl.setBackgroundColor(color(190));
