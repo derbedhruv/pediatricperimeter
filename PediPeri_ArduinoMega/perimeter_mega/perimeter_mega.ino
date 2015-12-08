@@ -37,7 +37,7 @@ void setup() {
   // next we give the PWM command to drive them. THey have 100E current limiting resistors
   //analogWrite(fixationLED, 80);
   //digitalWrite(IRLED, HIGH);
-  digitalWrite(ground,LOW);
+
 }
 
 void loop() {

@@ -71,7 +71,7 @@ PImage buttoncolmap;  // colormap of the buttons (hidden)
 GSCapture cam;        // GS Video Capture Object
 GSMovieMaker mm;      // GS Video Movie Maker Object  
 
-int fps = 7;          // The Number of Frames per second Declaration
+int fps = 15;          // The Number of Frames per second Declaration
 int ang = 0;
 //Declaration of the names for the buttons and their parameters 
 String[] buttonstring= {
@@ -210,23 +210,23 @@ cp5.addTextfield("Time") //Text Field Description and the Specifications
      
   // We check if the right camera is plugged in, and if so only then do we proceed, otherwise we exit the program.
   if (cameras.length == 0) {
-    println("There are no cameras available for capture.");
-    //exit();
+   println("There are no cameras available for capture.");
+    exit();
   } else {
-    println("Checking if correct camera has been plugged in ...");
+    //println("Checking if correct camera has been plugged in ...");
     
-    for (int i = 0; i < cameras.length; i++) {  //Listing the avalibale Cameras
+    for (int i = 0; i < cameras.length; i++) {  //Listing the avalibale Cameras  
       // println(cameras[i].length());
-      if (cameras[i].equals("HD USB Camera")) {
-        print("...success!\n");
-        cam = new GSCapture(this, 640, 480, cameras[i]);      // Camera object will capture in 640x480 resolution
+     // if (cameras[i].equals("HD USB Camera")) {
+       // print("...success!\n");
+        cam = new GSCapture(this, 640, 480, cameras[0]);      // Camera object will capture in 640x480 resolution            
         cam.start();      // shall start acquiring video feed from the camera
-        break; 
-      } 
-      println("...NO. Please check the camera connected!"); 
-      exit();
-    }  
-  }
+        //break; 
+      //} 
+      //println("...NO. Please check the camera connected!"); 
+      //exit();
+    } }  
+  
 }
 
 void draw() {

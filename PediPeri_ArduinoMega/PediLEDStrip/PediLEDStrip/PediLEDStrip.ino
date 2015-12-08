@@ -3,9 +3,14 @@
 #include <Adafruit_NeoPixel.h>
 #include <avr/power.h> // Comment out this line for non-AVR boards (Arduino Due, etc.)
 
-#define PIN 6
+#define PIN 6 // Pin number which is allocated to control the LED's together 
 
-// Parameter 1 = number of pixels in strip
+
+// The LED's burn up a lot of ram so make sure that the LED's are controlled by a good processor with good amount of ram mega is fine for our use, in general having a ram of 2KB
+// There may be some little blinking in the LED(twirking) this is because of the serial communication which is updated in every cycle of 800KHz
+// The LED strips we are 
+
+// Parameter 1 = number of pixels in strip 
 // Parameter 2 = Arduino pin number (most are valid)
 // Parameter 3 = pixel type flags, add together as needed:
 //   NEO_KHZ800  800 KHz bitstream (most NeoPixel products w/WS2812 LEDs)
@@ -13,9 +18,9 @@
 //   NEO_GRB     Pixels are wired for GRB bitstream (most NeoPixel products)
 //   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(60, PIN, NEO_GRB + NEO_KHZ800);
-
+// The object for creation of the 
 // IMPORTANT: To reduce NeoPixel burnout risk, add 1000 uF capacitor across
-// pixel power leads, add 300 - 500 Ohm resistor on first pixel's data input
+// pixel power leads, add 300 - 500 Ohm resistor on first pixel's data input      
 // and minimize distance between Arduino and first pixel.  Avoid connecting
 // on a live circuit...if you must, connect GND first.
 String inputString="", lat="", longit="";
@@ -160,7 +165,7 @@ void serialEvent() {
          // we then switch through WHICH hemisphere
          switch(longit[0]){
            case '1': {
-             // THis is the hemisphere case. Turn on all the latitudes..
+             // This is the hemisphere case. Turn on all the latitudes..
              colorWipe(strip.Color(255, 255, 0),0,60);
              break;
            }
