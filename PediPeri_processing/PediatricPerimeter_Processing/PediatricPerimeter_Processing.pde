@@ -1,30 +1,26 @@
 /***************************************
-THIS IS THE LATEST VERSION AS OF 28-oct-2015
-Written By :Karthik Reddy, Dhruv Joshi
-Project Name :Pediatric Perimeter
-The Project is Intended to caliberate the field of vision and other few vision related issues in Babies under a year 
-There are three main parts of the Program Basically the custom Buttons,Video, The input for the Doctor to enter the description and details of the patient 
-->There are Three Text Field For Age,Name,Description
-->One DropDown List 
-->Four Bangs(Buttons which Act as Functions)
-->The Inputs are taken to a text file(.txt) and are written to a File and when the Button Save is Pressed
-->Later these files can be viewed by Doctors as a Reference
-->The Video is Captured using the GS Video Library and The Saving of the video Captured is Recorded by the Controls by the Bangs Start and Stop 
-->The File name of the Video can be Controlled and the Quality of the Video is kept Low as the File Size of the Video is more if the Quality is kept more
-->The Buttons which represent the segments of the Perimeter can be clicked on the respective Segment ,the clicked segment will displayed on the Screen 
-*/
+THIS IS THE LATEST VERSION AS OF 04-Dec-2015
+
+  Project Name : Pediatric Perimeter
+  Author : Dhruv Joshi, Karthik Reddy
+  
+  Bugs Fixed:
+   - 30 fps video recording, at the proper speed
+   - increased quality of recording to BEST
+  
+****************************************/
 import processing.serial.*;
 import codeanticode.gsvideo.*;  // Importing GS Video Library 
 import controlP5.*;             // Import Control P5 Library
 
 Serial arduino;                 // create serial object
-int kk=0;
+int kk = 0;
 
 PrintWriter output;             // The File Writing Object
 
-int ext = 0, me=-1;             // "me" tracks the meridian number
-String azimuth,m,time="1000";                // converts "me" to the azimuth, which is used for preparing the proper isopter
-boolean detailsEntered = false, videoRecording = false,timeStampDone=true,testStopped=true,isMeridian= false;    // These booleans follow whether information's been entered and when to start the video
+int ext = 0, me = -1;             // "me" tracks the meridian number
+String azimuth, m, time="1000";                // converts "me" to the azimuth, which is used for preparing the proper isopter
+boolean detailsEntered = false, videoRecording = false, timeStampDone=true, testStopped=true, isMeridian= false;    // These booleans follow whether information's been entered and when to start the video
 
 // These variables relate to hte ellipses that indicate current LED position.
 int i = 25, xi, yi;             // Store position of the LED, but not for long.
@@ -71,7 +67,11 @@ PImage buttoncolmap;  // colormap of the buttons (hidden)
 GSCapture cam;        // GS Video Capture Object
 GSMovieMaker mm;      // GS Video Movie Maker Object  
 
+<<<<<<< HEAD
 int fps = 15;          // The Number of Frames per second Declaration
+=======
+int fps = 30;          // The Number of Frames per second Declaration
+>>>>>>> 9fd14933465b1f67c3c8c9fd6afac267109f4d58
 int ang = 0;
 //Declaration of the names for the buttons and their parameters 
 String[] buttonstring= {
@@ -232,17 +232,13 @@ cp5.addTextfield("Time") //Text Field Description and the Specifications
 void draw() {
   // The shit that has to be done each time...
   background(buttonm);//BackgEnd
-    text(textTimer, 700, 530); 
+  text(textTimer, 700, 530); 
   fill(0);
   //textFont(createFont("arial", 16), 16);
   text(textVideo, 320, 530); 
   text(textValue, 320, 510);
- text(textTimer, 400, 530); 
+  text(textTimer, 400, 530); 
 
-  // text(textfield, 1050, 440); 
-  // text(textMe, 1110, 440);
-  
-    
   // The following is the red ellipse being printed to indicate which LED is on
   for (int p = 0; p < 24; p++) {
     if (perimeter[p] > 1) {
@@ -272,8 +268,6 @@ void draw() {
   rect(1123,450,66,125);
   fill(195, 195, 195, hemquad[5]);
   rect(1192,450,66,125);
-  
- 
 
   if(detailsEntered == true) {    // Has the doctor entered the details which are required?
         
@@ -282,22 +276,30 @@ void draw() {
       cam.read();
       image(cam, 245, 0);
      
-stroke(255,0,0);
-//strokeWeight(4);  // Thicker
-
- //fill(0,0,255);
-line(555,240,575,240);
-line(565,230,565,250);
-point(565,240);
-      PImage videoSection = get(245, 0, 1055, 600);    // crop our section of interest of the page
-      videoSection.loadPixels();    // Loads the pixel data for the *CROPPED* display window into the pixels[] array. This function must always be called before reading from or writing to pixels[].
+      // draw the crosshair in the center
+      stroke(255,0,0);
+      line(555,240,575,240);
+      line(565,230,565,250);
+      point(565,240);
       
-      if (videoRecording == true) {
-        mm.addFrame(videoSection.pixels);  // Array containing the values for all the pixels in the display window.
-      } 
+    } else {
+      image(cam, 245, 0);
+     
+      // draw the crosshair in the center
+      stroke(255,0,0);
+      line(555,240,575,240);
+      line(565,230,565,250);
+      point(565,240);
     }
-//strokeWeight(1);
-  }    // Add window's pixels to movie
+    
+    // crop out portion and save to video..
+    PImage videoSection = get(245, 0, 1055, 600);    // crop our section of interest of the page
+    videoSection.loadPixels();    // Loads the pixel data for the *CROPPED* display window into the pixels[] array. This function must always be called before reading from or writing to pixels[].
+     
+    if (videoRecording == true) {
+        mm.addFrame(videoSection.pixels);  // Array containing the values for all the pixels in the display window.
+    }
+  }
   
   // Here we continuously update the timedate on the screen...
   t.setValue(day()+ "-" + month() + "-" + year() + "\n" + hour() + ":" + minute() + ":" + second());
@@ -305,11 +307,8 @@ point(565,240);
   t.setPosition(20,480);
   t.setColorValue(0x000000);
   t.setFont(createFont("Arial",14));
-
- 
-  thread("timerData");
-   
   
+  thread("timerData");
 }
 public void Send(){
         arduino.write('m'); //Brightness Slider
@@ -389,8 +388,8 @@ public void Save() {//Bang Function for the Button Save
     textVideo = "Thank you. Video is ON. Please click on a test..";
     detailsEntered = true;      // Details have been entered. Awesome. Show the video.
     
-    mm = new GSMovieMaker(this, width-245, height, folderName + "/" + year() + "" + month() + "" + day() + "_" + textName + ".avi", GSMovieMaker.MJPEG, GSMovieMaker.LOW, fps); // the Mavie Maker Object
-    mm.setQueueSize(50, 10);
+    mm = new GSMovieMaker(this, width-245, height, folderName + "/" + year() + "" + month() + "" + day() + "_" + textName + ".avi", GSMovieMaker.DIRAC, GSMovieMaker.BEST, fps); // the Mavie Maker Object
+    mm.setQueueSize(0, 60);
     videoRecording = true;        // start recording the video.
     // then we start the video..
     mm.start();               // Starting the Pictures
@@ -496,258 +495,241 @@ void mousePressed() {
         }
       }
    
+      textMe = ("Angle: " + theta + " degrees");    // print to the textfield indicating which meridian was selected
+    } else if(r1<66){
+      isMeridian=false;
+      theta = (float(mouseY) - 516)/ (float(mouseX) - 991);
+      theta = atan(theta);
+      theta = degrees(theta);
     
-    //println(azimuth);
-    // Now we know whch meridian's been selected.
-    // println("Meridian" + me);
-    textMe = ("Angle: " + theta + " degrees");    // print to the textfield indicating which meridian was selected
-    // ang = int(((me+1)*15) /*+ 7.5*/);    // The 7.5 degrees has been removed so that the red dot will come in the center of the meridian, which is more representative of reality
-        
-  } 
-  else if(r1<66){
-    isMeridian=false;
-    theta = (float(mouseY) - 516)/ (float(mouseX) - 991);
-    theta = atan(theta);
-    theta = degrees(theta);
-    
-    // Then we choose the sign of theta based on standard polar coordinates convention
-    if(mouseX>991  && mouseY<516)
-      theta= -1*theta;
-    else if(mouseX<991)// && mouseY<200)
-      theta = 180 - theta; 
-    else if(mouseX>991 && mouseY>516)
-      theta = 360 - theta;
-    kk++;
-        if (kk == 1) {
-          c.reset();
-        }
-  if(r1>33){
-  
-  if (theta <=90){    
-        Stop();    
-        arduino.write('q');
-        arduino.write(',');
-        arduino.write('2');
-        arduino.write('\n');
-        textValue = "Quadrant " + "top right";
-         if (timeStampDone == true) {
-          output.print("Quadrant");
-            output.print(" top right");
-             timeStampDone = false;
-           output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis());  
-         output.flush(); // Writes the remaining data to the file
-       }
-        hemquad[2 - 1] = 200;  // set that particular quadrant to 'done' 
-  }
-  else if(theta>90 && theta <=180){
-        Stop();
-        arduino.write('q');
-        arduino.write(',');
-        arduino.write('3');
-        arduino.write('\n');
-        textValue = "Quadrant " + "top left";
-         if (timeStampDone == true) {
-          output.print("Quadrant");
-            output.print(" top left");
+      // Then we choose the sign of theta based on standard polar coordinates convention
+      if(mouseX>991  && mouseY<516)
+        theta= -1*theta;
+      else if(mouseX<991)// && mouseY<200)
+        theta = 180 - theta; 
+      else if(mouseX>991 && mouseY>516)
+        theta = 360 - theta;
+      kk++;
+      if (kk == 1) {
+        c.reset();
+      }
+      if(r1 > 33) {
+        if (theta <=90) {    
+              Stop();    
+              arduino.write('q');
+              arduino.write(',');
+              arduino.write('2');
+              arduino.write('\n');
+              textValue = "Quadrant " + "top right";
+              if (timeStampDone == true) {
+                output.print("Quadrant");
+                output.print(" top right");
+                timeStampDone = false;
+                output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis());  
+                output.flush(); // Writes the remaining data to the file
+              }
+              hemquad[2 - 1] = 200;  // set that particular quadrant to 'done' 
+            } else if (theta > 90 && theta <= 180) {
+              Stop();
+              arduino.write('q');
+              arduino.write(',');
+              arduino.write('3');
+              arduino.write('\n');
+              textValue = "Quadrant " + "top left";
+              
+              if (timeStampDone == true) {
+               output.print("Quadrant");
+               output.print(" top left");
                timeStampDone = false; 
+               output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
+               output.flush(); // Writes the remaining data to the file  
+              }
+              hemquad[3 - 1] = 200;  // set that particular quadrant to 'done'
+            } else if (theta > 180 && theta <= 270) {
+              Stop();
+              arduino.write('q');
+              arduino.write(',');
+              arduino.write('4');
+              arduino.write('\n');
+              textValue = "Quadrant " + "bottom left"; 
+              
+              if (timeStampDone == true) {
+               output.print("Quadrant");
+               output.print(" bottom left");
+               timeStampDone = false;
+               output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis());   
+               output.flush(); // Writes the remaining data to the file  
+              }
+              hemquad[4 - 1] = 200;
+          } else if (theta  >270 && theta <= 360) {
+            Stop(); 
+            arduino.write('q');
+            arduino.write(',');
+            arduino.write('1');
+            arduino.write('\n');
+            textValue = "Quadrant " + "bottom right";
+            
+            if (timeStampDone == true) {
+             output.print("Quadrant");
+             output.print(" bottom right");
+             timeStampDone = false; 
+             output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
+             output.flush(); // Writes the remaining data to the file
+            }
+          }
+        }  else if (r1 < 33) {
+           if (theta <=90){        
+             Stop();
+             arduino.write('q');
+             arduino.write(',');
+             arduino.write('6');
+             arduino.write('\n');
+             textValue = "Quadrant " + "2 inner";
+             
+             if (timeStampDone == true) {
+              output.print("Quadrant");
+              output.print(" top right inner");
+              timeStampDone = false;
+              output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis());  
+              output.flush(); // Writes the remaining data to the file  
+             }
+             hemquad[2 - 1] = 200;  // set that particular quadrant to 'done' 
+           } else if (theta > 90 && theta <= 180) {
+               Stop();
+               arduino.write('q');
+               arduino.write(',');
+               arduino.write('7');
+               arduino.write('\n');
+               textValue = "Quadrant " + "top left inner";
+               
+               if (timeStampDone == true) {
+                output.print("Quadrant");
+                output.print(" top left inner");
+                timeStampDone = false; 
                 output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
-       output.flush(); // Writes the remaining data to the file  
-        }
-        hemquad[3 - 1] = 200;  // set that particular quadrant to 'done'
-  }
-  else if(theta>180 && theta <=270){
-        Stop();
-        arduino.write('q');
-        arduino.write(',');
-        arduino.write('4');
-        arduino.write('\n');
-        textValue = "Quadrant " + "bottom left"; 
-         if (timeStampDone == true) {
-          output.print("Quadrant");
-            output.print(" bottom left");
-             timeStampDone = false;
-           output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis());   
-       output.flush(); // Writes the remaining data to the file  
-       }
-        hemquad[4 - 1] = 200; } // set that particular quadrant to 'done'}
-  else if(theta>270 && theta <=360){
-        Stop(); 
-        arduino.write('q');
-        arduino.write(',');
-        arduino.write('1');
-        arduino.write('\n');
-        textValue = "Quadrant " + "bottom right";
-         if (timeStampDone == true) {
-          output.print("Quadrant");
-            output.print(" bottom right");
-   timeStampDone = false; 
-output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
-output.flush(); // Writes the remaining data to the file
-}
- }
-  }
-  else if(r1<33){
-    if (theta <=90){        
-        Stop();
-        arduino.write('q');
-        arduino.write(',');
-        arduino.write('6');
-        arduino.write('\n');
-        textValue = "Quadrant " + "2 inner";
-         if (timeStampDone == true) {
-          output.print("Quadrant");
-            output.print(" top right inner");
-             timeStampDone = false;
-           output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis());  
-      output.flush(); // Writes the remaining data to the file  
-       }
-        hemquad[2 - 1] = 200;  // set that particular quadrant to 'done' 
-  }
-  else if(theta>90 && theta <=180){
-        Stop();
-        arduino.write('q');
-        arduino.write(',');
-        arduino.write('7');
-        arduino.write('\n');
-        textValue = "Quadrant " + "top left inner";
-         if (timeStampDone == true) {
-          output.print("Quadrant");
-            output.print(" top left inner");
-                           timeStampDone = false; 
-            output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
-       output.flush(); // Writes the remaining data to the file  
-        }
-        hemquad[3 - 1] = 200;  // set that particular quadrant to 'done'
-  }
-  else if(theta>180 && theta <=270){
-        Stop();
-        arduino.write('q');
-        arduino.write(',');
-        arduino.write('8');
-        arduino.write('\n');
-        textValue = "Quadrant " + "bottom left inner";
-         if (timeStampDone == true) {
-          output.print("Quadrant");
-            output.print(" bottom left inner");
-             timeStampDone = false;
-           output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
-       output.flush(); // Writes the remaining data to the file  
-       }
-        hemquad[4 - 1] = 200; } // set that particular quadrant to 'done'}
-  else if(theta>270 && theta <=360){
-        Stop();
-        arduino.write('q');
-        arduino.write(',');
-        arduino.write('5');
-        arduino.write('\n');
-        textValue = "Quadrant " + "bottom right inner";
-         if (timeStampDone == true) {
-          output.print("Quadrant");
-            output.print(" bottom right inner");
-   timeStampDone = false; 
-output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
-output.flush(); // Writes the remaining data to the file
-}
- hemquad[1 - 1] = 200;}
-  }
-}      
-  else if(r2<66 ){
-    isMeridian=false;
-     kk++;
-        if (kk == 1) {
-          c.reset();
-        }
-    theta = (float(mouseY) - 516)/ (float(mouseX) - 991);
-    theta = atan(theta);
-    theta = degrees(theta);
+                output.flush(); // Writes the remaining data to the file  
+               }
+               hemquad[3 - 1] = 200;  // set that particular quadrant to 'done'
+             } else if (theta > 180 && theta <= 270) {
+                 Stop();
+                 arduino.write('q');
+                 arduino.write(',');
+                 arduino.write('8');
+                 arduino.write('\n');
+                 textValue = "Quadrant " + "bottom left inner";
+                 
+                 if (timeStampDone == true) {
+                  output.print("Quadrant");
+                  output.print(" bottom left inner");
+                  timeStampDone = false;
+                  output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
+                  output.flush(); // Writes the remaining data to the file  
+                 }
+                 hemquad[4 - 1] = 200; 
+               } else if(theta>270 && theta <=360){
+                   Stop();
+                   arduino.write('q');
+                   arduino.write(',');
+                   arduino.write('5');
+                   arduino.write('\n');
+                   textValue = "Quadrant " + "bottom right inner";
+                   
+                   if (timeStampDone == true) {
+                      output.print("Quadrant");
+                      output.print(" bottom right inner");
+                      timeStampDone = false; 
+                      output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
+                      output.flush(); // Writes the remaining data to the file
+                   }
+                   hemquad[1 - 1] = 200;}
+                 }
+               } else if (r2 < 66) {
+                 isMeridian=false;
+                 kk++;
+                 if (kk == 1) {
+                   c.reset();
+                 }
+                 theta = (float(mouseY) - 516)/ (float(mouseX) - 991);
+                 theta = atan(theta);
+                 theta = degrees(theta);
     
-    // Then we choose the sign of theta based on standard polar coordinates convention
-    if(mouseX>1191  && mouseY<516)
-      theta= -1*theta;
-    else if(mouseX<1191)// && mouseY<200)
-      theta = 180 - theta; 
-    else if(mouseX>1191 && mouseY>516)
-      theta = 360 - theta; 
-   if(r2<33){
-     if (theta >90 && theta<270){
-        Stop();
-        arduino.write('h');
-        arduino.write(',');
-        arduino.write('a');
-        arduino.write('\n');
-        textValue = "Hemisphere " + "left inner";
-        if (timeStampDone == true) {
-          output.print("Hemisphere");
-         output.print(" left inner");
-           output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
-          timeStampDone = false;  
-          output.flush(); // Writes the remaining data to the file
+                // Then we choose the sign of theta based on standard polar coordinates convention
+                if(mouseX>1191  && mouseY<516)
+                  theta= -1*theta;
+                else if(mouseX<1191)// && mouseY<200)
+                  theta = 180 - theta; 
+                else if(mouseX>1191 && mouseY>516)
+                  theta = 360 - theta; 
+               if(r2<33){
+                 if (theta >90 && theta<270) {
+                    Stop();
+                    arduino.write('h');
+                    arduino.write(',');
+                    arduino.write('a');
+                    arduino.write('\n');
+                    textValue = "Hemisphere " + "left inner";
+                    if (timeStampDone == true) {
+                      output.print("Hemisphere");
+                      output.print(" left inner");
+                      output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
+                      timeStampDone = false;  
+                      output.flush(); // Writes the remaining data to the file
+                    }
+                    hemquad[4] = 200;
+                  } else {
+                    Stop();
+                    arduino.write('h');
+                    arduino.write(',');
+                    arduino.write('b');
+                    arduino.write('\n');
+                    textValue = "Hemisphere " + "right inner";
+                    if (timeStampDone == true) {
+                      output.print("Hemisphere");
+                      output.print(" right inner");
+                      output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
+                      timeStampDone = false;  
+                      output.flush(); // Writes the remaining data to the file  
+                    }
+                    hemquad[5] = 200;
+                  }
+                } else {
+                  if (theta >90 && theta <270){
+                    Stop();
+                    arduino.write('h');
+                    arduino.write(',');
+                    arduino.write('l');
+                    arduino.write('\n');
+                    textValue = "Hemisphere " + "left";
+                    if (timeStampDone == true) {
+                      output.print("Hemisphere");
+                      output.print(" left ");
+                      output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
+                      timeStampDone = false;  
+                      output.flush(); // Writes the remaining data to the file  
+                    }
+                    hemquad[4] = 200;
+                  } else {
+                    Stop();
+                    arduino.write('h');
+                    arduino.write(',');
+                    arduino.write('r');
+                    arduino.write('\n');
+                    textValue = "Hemisphere " + "right ";
+                    if (timeStampDone == true) {
+                      output.print("Hemisphere");
+                      output.print(" right ");
+                      output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
+                      timeStampDone = false;  
+                      output.flush(); // Writes the remaining data to the file  
+                    }
+                    hemquad[5] = 200;
+                  }
+                }
+              } else textMe = "None";
+            } else {
+              textVideo="Please Enter the Patient name";
+          }
         }
-       
-          hemquad[4] = 200;
-        }
-        else {
-        Stop();
-        arduino.write('h');
-        arduino.write(',');
-        arduino.write('b');
-        arduino.write('\n');
-        textValue = "Hemisphere " + "right inner";
-        if (timeStampDone == true) {
-          output.print("Hemisphere");
-         output.print(" right inner");
-           output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
-          timeStampDone = false;  
-     output.flush(); // Writes the remaining data to the file  
-      }
-      
-          hemquad[5] = 200;
-        }}
-        else{
-        if (theta >90 && theta <270){
-        Stop();
-        arduino.write('h');
-        arduino.write(',');
-        arduino.write('l');
-        arduino.write('\n');
-        textValue = "Hemisphere " + "left";
-        if (timeStampDone == true) {
-          output.print("Hemisphere");
-         output.print(" left ");
- 
-          output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
-          timeStampDone = false;  
-     output.flush(); // Writes the remaining data to the file  
-      }
-       
-          hemquad[4] = 200;
-        }
-        else {
-        Stop();
-        arduino.write('h');
-        arduino.write(',');
-        arduino.write('r');
-        arduino.write('\n');
-        textValue = "Hemisphere " + "right ";
-        if (timeStampDone == true) {
-          output.print("Hemisphere");
-         output.print(" right ");
- 
-         output.print("\t" + hour() + ":" + minute() +":" + second()+":" + millis()); 
-          timeStampDone = false;  
-     output.flush(); // Writes the remaining data to the file  
-      }
-      
-          hemquad[5] = 200;
-        }
-     }
-  }
-  else textMe = "None";
-}
-else {
-        textVideo="Please Enter the Patient name";
-      }
-}
    
 void customize(DropdownList ddl) {
   // This part changes the properties of the MALE/FEMALE dropdown
@@ -803,8 +785,8 @@ public void Fixation(){
   arduino.write('\n');
 }
 void timerData(){
-if(kk>=1){
-textTimer = c.toString()+":"+c.millis();
-println(textTimer);
-}
+  if(kk>=1) {
+    textTimer = c.toString()+":"+c.millis();
+    println(textTimer);
+  }
 }
